@@ -7,11 +7,10 @@ use App\Stad;
 
 class StadController extends Controller
 {
-  public function show($stad){
-    $stad = Stad::where('stad', '=', $stad)->first();
-
-    return response()->json([
-      "stad" => $stad,
-    ]);
+  public function show($taal, $stad){
+    $stad = Stad::where([['stad', '=', $stad],['taal', '=', $taal]])->get();
+    return response()->json(
+            $stad
+    );
   }
 }
