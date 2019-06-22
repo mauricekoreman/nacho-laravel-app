@@ -16,6 +16,7 @@ class CreateStedenTable extends Migration
         Schema::create('steden', function (Blueprint $table) {
           $table->string('stad');
           $table->text('info');
+          $table->string('taal');
         });
     }
 
